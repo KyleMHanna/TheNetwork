@@ -2,7 +2,7 @@
   <template>
     <div class="container-fluid">
       <div class="row">
-        <PostsFeed v-for="p in post" :key="p.id" :post="p" />
+        <PostsFeed />
       </div>
     </div>
   </template>
@@ -14,7 +14,7 @@ import { postsFeedService } from '../services/PostsFeedService.js'
 import Pop from '../utils/Pop.js'
 import { AppState } from '../AppState.js'
 export default {
-
+  name: 'Home',
   setup() {
     onMounted(async() => {
       try {
@@ -31,5 +31,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+// v-for="p in post" :key="p.id" :post="p"
 </style>
