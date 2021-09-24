@@ -12,17 +12,17 @@ class PostsFeedService {
     logger.log(res.data, 'from the get posts service')
   }
 
-  // async createPost(newPost) {
-  //   const res = await api.post('api/posts', newPost)
-  //   logger.log(res)
-  //   AppState.posts.unshift(new Post(res.data))
-  // }
+  async createPost(newPost) {
+    const res = await api.post('api/posts', newPost)
+    logger.log(res)
+    AppState.posts.unshift(new Post(res.data))
+  }
 
-  // async deletePost(postId) {
-  //   const res = await api.delete('api/posts/' + postId)
-  //   logger.log('delete res', res)
-  //   AppState.posts = AppState.posts.filter(p => p.id !== postId)
-  // }
+  async deletePost(postId) {
+    const res = await api.delete('api/posts/' + postId)
+    logger.log('delete res', res)
+    AppState.posts = AppState.posts.filter(p => p.id !== postId)
+  }
 }
 
 export const postsFeedService = new PostsFeedService()

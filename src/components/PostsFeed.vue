@@ -5,6 +5,7 @@
       <div class="card-body">
         <h5 class="card-title">
           {{ post.body }}
+          likes   {{ post.likeIds }}
         </h5>
         <p class="card-text clip-text" id="read-more">
         </p>
