@@ -6,6 +6,7 @@ export class Post {
     this.likes = data.likes
     this.likeIds = data.likeIds
     this.creatorId = data.creatorId
+    this.creator = data.creator || {}
     this.profilePic = data.creator.picture
   }
 }

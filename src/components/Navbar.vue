@@ -4,7 +4,7 @@
       <div class="d-flex flex-column align-items-center">
         <img
           alt="logo"
-          src="../assets/img/cw-logo.png"
+          src="https://static-cdn.jtvnw.net/jtv_user_pictures/kambrodian-profile_image-28f4aec0fe4f5c8f-300x300.png"
           height="45"
         />
       </div>
@@ -22,11 +22,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
-        <li>
-          <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
-            About
-          </router-link>
-        </li>
+        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#post-form">
+          Create Post
+        </button>
       </ul>
       <span class="navbar-text">
         <button
