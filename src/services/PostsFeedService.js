@@ -2,11 +2,12 @@ import { logger } from '../utils/Logger'
 import { AppState } from '../AppState'
 import { Post } from '../models/Post.js'
 import { api } from './AxiosService'
-// import { convertToQuery } from '../utils/Query'
+import { convertToQuery } from '../utils/Query'
 
 class PostsFeedService {
-  async getPosts() {
-    const res = await api.get('api/posts')
+  async getPosts(query = {}) {
+    AppState.posts = []
+    const res = await api.get('api/posts' + convertToQuery(query))
     AppState.posts = res.data.posts.map(p => new Post(p))
     // FIXME -
     logger.log(res.data, 'from the get posts service')

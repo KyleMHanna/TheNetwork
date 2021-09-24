@@ -21,7 +21,7 @@
 <script>
 import { computed, watchEffect } from '@vue/runtime-core'
 import { useRoute } from 'vue-router'
-import { newsFeedService } from '../services/NewsFeedService'
+import { postsFeedService } from '../services/PostsFeedService'
 import { profilesService } from '../services/ProfilesService'
 import Pop from '../utils/Pop'
 import { AppState } from '../AppState'
@@ -30,7 +30,7 @@ export default {
     const route = useRoute()
     async function getPosts() {
       try {
-        await newsFeedService.getPosts({ creatorId: route.params.id })
+        await postsFeedService.getPosts({ creatorId: route.params.id })
       } catch (error) {
         Pop.toast(error, 'error')
       }
