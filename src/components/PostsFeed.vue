@@ -1,16 +1,16 @@
 <template>
   <div class="col-md-3 py-3">
     <div class="card" style="">
-      <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == posts.creatorId">
+      <!-- <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == posts.creatorId">
         <i class="mdi mdi-close text-danger f-20 selectable" @click="deletePost()"></i>
-      </div>
-      <img :src="posts.imgUrl" class="card-img-top img-style img-fluid" alt="...">
+      </div> -->
+      <img :src="post.imgUrl" class="card-img-top img-style img-fluid" alt="...">
       <div class="card-body">
         <h5 class="card-title">
-          {{ posts.title }}
+          <!-- {{ post.title }} -->
+          {{ post.body }}
         </h5>
         <p class="card-text clip-text" id="read-more">
-          {{ posts.body }}
         </p>
         <p class="selectable " @click.prevent="readMore()">
           Read more...
@@ -34,7 +34,7 @@ import { postsFeedService } from '../services/PostsFeedService.js'
 import Pop from '../utils/Pop.js'
 export default {
   props: {
-    posts: {
+    post: {
       type: Object,
       required: true
     }
@@ -47,7 +47,7 @@ export default {
       // },
       async deletePost() {
         try {
-          await postsFeedService.deletePost(props.posts.id)
+          await postsFeedService.deletePost(props.post.id)
         } catch (error) {
           Pop.toast(error, 'error')
         }
