@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 ">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
         <img
@@ -22,9 +22,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
-        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#post-form">
+        <!-- <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#post-form">
           Create Post
-        </button>
+        </button> -->
       </ul>
       <span class="navbar-text">
         <button

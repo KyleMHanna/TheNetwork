@@ -13,7 +13,7 @@
       <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
     </div>
     <div class="row" v-else>
-      <h3>No Porsts..... Very sad Much empty</h3>
+      <h3>No Content</h3>
     </div>
   </div>
 </template>

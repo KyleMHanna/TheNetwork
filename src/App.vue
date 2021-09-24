@@ -40,5 +40,11 @@ export default {
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
-
+.sidebar{
+  height: 300vh;
+}
+.viewport{
+  height: 100vh;
+  overflow-y: auto;
+}
 </style>

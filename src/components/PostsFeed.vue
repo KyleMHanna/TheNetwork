@@ -2,13 +2,15 @@
   <div class="col-md-3 py-3">
     <div class="card" style="">
       <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == post.creatorId">
-        <i class="mdi mdi-close text-danger f-20 selectable" @click="deletePost()"></i>
+        <i class="mdi mdi-delete text-danger f-20 selectable" @click="deletePost()"></i>
       </div>
       <img :src="post.imgUrl" class="card-img-top img-style img-fluid" alt="...">
       <div class="card-body">
         <h5 class="card-title">
           {{ post.body }}
-          likes   {{ post.likeIds }}
+          <button>
+            <i class="mdi mdi-thumb-up text-primary">{{ post.likeIds.length }}</i>
+          </button>
         </h5>
         <router-link :to="{name: 'Profile', params: {id: post.creatorId}}" class="selectable">
           <span>
