@@ -24,7 +24,7 @@ import Pop from '../utils/Pop.js'
 export default {
   name: 'Posts',
   props: {
-    posts: {
+    post: {
       type: Object,
       required: true
     }

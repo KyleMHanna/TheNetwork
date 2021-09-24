@@ -2,7 +2,7 @@
   <template>
     <div class="container-fluid">
       <div class="row">
-        <PostsFeed />
+        <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
       </div>
     </div>
   </template>
@@ -31,5 +31,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// v-for="p in post" :key="p.id" :post="p"
+
 </style>
