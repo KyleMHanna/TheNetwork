@@ -15,6 +15,7 @@
       Made with 💖 by CodeWorks
     </div>
   </footer>
+
   <Modal id="post-form">
     <template #modal-title>
       <h4>Post Form</h4>
