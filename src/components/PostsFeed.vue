@@ -1,28 +1,26 @@
 <template>
-  <!-- <div class="col-md-3 py-3">
+  <div class="col-md-3 py-3">
     <div class="card" style="">
-      <img :src="posts.imgUrl" class="card-img-top img-style img-fluid" alt="...">
+      <img :src="post.imgUrl" class="card-img-top img-style img-fluid" alt="...">
       <div class="card-body">
         <h5 class="card-title">
-          {{ posts.title }}
+          {{ post.body }}
         </h5>
         <p class="card-text clip-text" id="read-more">
-          {{ posts.body }}
         </p>
       </div>
     </div>
-  </div> -->
-  <p>this is a post</p>
+  </div>
 </template>
 
 <script>
 import { computed } from '@vue/runtime-core'
-
 import { AppState } from '../AppState.js'
 import { postsFeedService } from '../services/PostsFeedService.js'
 import Pop from '../utils/Pop.js'
+
 export default {
-  name: 'Posts',
+
   props: {
     post: {
       type: Object,
@@ -43,6 +41,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style scoped lang="scss">

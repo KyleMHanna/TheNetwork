@@ -1,11 +1,10 @@
+
 <template>
-  <template>
-    <div class="container-fluid">
-      <div class="row">
-        <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
-      </div>
+  <div class="container-fluid">
+    <div class="row">
+      <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
     </div>
-  </template>
+  </div>
 </template>
 
 <script>
