@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-3 py-3">
+  <div class="col-md-3 py-3 elevation-5 p-3">
     <div class="card" style="">
       <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == post.creatorId">
         <i class="mdi mdi-delete text-danger f-20 selectable" @click="deletePost()"></i>
@@ -9,8 +9,8 @@
           <i class="mdi mdi-thumb-up text-primary" @click="likePost()">{{ post.likeIds.length }}</i>
         </button>
       </div>
-      <img :src="post.imgUrl" class="card-img-top img-style img-fluid" alt="">
-      <div class="card-body">
+      <img :src="post.imgUrl" class="card-img-top img-style img-fluid elevation-5" alt="">
+      <div class="card-body elevation-5">
         <h5 class="card-title">
           {{ post.body }}
         </h5>
@@ -26,21 +26,6 @@
       </div>
     </div>
   </div>
-  <!-- <div class="container">
-    <div class="row">
-      <div>
-        <button @click="getNewerPage()" class="btn btn-info">
-          Newer
-        </button>
-        <button @click="getOlderPage()" class="btn btn-info">
-          Older
-        </button>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- <div class="col-md-2 py-3">
-  </div> -->
 </template>
 
 <script>
@@ -61,21 +46,7 @@ export default {
     return {
       account: computed(() => AppState.account),
       posts: computed(() => AppState.post),
-      // postsData: computed(() => AppState.postsData),
-      // async getOlderPage() {
-      //   try {
-      //     await postsFeedService.getOlderPage()
-      //   } catch (error) {
-      //     Pop.toast('error', error)
-      //   }
-      // },
-      // async getNewerPage() {
-      //   try {
-      //     await postsFeedService.getNewerPage()
-      //   } catch (error) {
-      //     Pop.toast('error', error)
-      //   }
-      // },
+
       async deletePost() {
         try {
           const yes = await Pop.confirm('Are you sure you want to delete?')

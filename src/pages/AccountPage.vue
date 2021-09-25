@@ -23,7 +23,8 @@
       {{ account.class }}
     </p>
   </div>
-  <div class="row">
+  <button class="selectable mdi mdi-cog 48px " @click.prevent="updateProfile()"></button>
+  <div class="row visually-hidden" id="update-Profile">
     <form @submit.prevent="updateAccount()">
       <h3> cover image</h3>
       <input type="text" v-model="account.coverImg"><br />
@@ -57,6 +58,9 @@ export default {
     const account = computed(() => AppState.account)
     return {
       account,
+      updateProfile() {
+        document.getElementById('update-Profile').classList.toggle('visually-hidden')
+      },
       async updateAccount() {
         try {
           const yes = await Pop.confirm('Are you sure you want to Update?')

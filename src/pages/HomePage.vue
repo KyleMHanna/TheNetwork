@@ -1,12 +1,12 @@
 
 <template>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row py-2">
       <div>
-        <button @click="getNewerPage()" class="btn btn-secondary">
+        <button @click="getNewerPage()" class="btn btn-secondary elevation-5">
           Newer
         </button>
-        <button @click="getOlderPage()" class="btn btn-secondary">
+        <button @click="getOlderPage()" class="btn btn-secondary elevation-5">
           Older
         </button>
       </div>

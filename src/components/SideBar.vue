@@ -4,18 +4,18 @@
       <div class="links">
         <ul class="nav-links ps-0">
           <li class="nav-link">
-            <router-link class="btn btn-secondary" type="button" :to="{ name: 'Home' }">
+            <router-link class="btn btn-secondary elevation-5 " type="button" :to="{ name: 'Home' }">
               Home
             </router-link>
           </li>
 
           <li class="nav-link">
-            <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#post-form">
+            <button class="btn btn-secondary elevation-5 " type="button" data-bs-toggle="modal" data-bs-target="#post-form">
               Create Post
             </button>
           </li>
           <li class="nav-link">
-            <router-link class="btn btn-secondary" type="button" :to="{ name: 'Account' }">
+            <router-link class="btn btn-secondary elevation-5" type="button" :to="{ name: 'Account' }">
               Account
             </router-link>
           </li>
