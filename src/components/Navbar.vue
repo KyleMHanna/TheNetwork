@@ -22,9 +22,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
-        <!-- <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#post-form">
-          Create Post
-        </button> -->
+        <div>
+          <PostFinder />
+        </div>
       </ul>
       <span class="navbar-text">
         <button

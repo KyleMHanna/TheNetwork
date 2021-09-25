@@ -38,7 +38,7 @@ class PostsFeedService {
 
   async searchPost(query = {}) {
     const res = await api.get(`api/posts?query=${query}`)
-    AppState.postSearch = res.data.posts
+    AppState.posts = res.data.posts.map(m => new Post(m))
   }
 
   async next(url) {
