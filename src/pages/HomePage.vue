@@ -17,9 +17,6 @@
       <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
     </div>
     <div class="row">
-      <div class="col">
-        <Sponsor v-for="s in sponsor" :key="s.id" :sponsor="s" />
-      </div>
     </div>
   </div>
 </template>
@@ -50,6 +47,7 @@ export default {
       sponsor: computed(() => AppState.sponsors),
       postsData: computed(() => AppState.postsData),
       currentPage: computed(() => AppState.currentPage),
+      like: computed(() => AppState.likes),
       async getOlderPage() {
         try {
           await postsFeedService.getOlderPage()
