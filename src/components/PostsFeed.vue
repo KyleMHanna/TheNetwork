@@ -21,7 +21,7 @@
           </span>
         </router-link>
         <p class="card-text">
-          <small class="text-muted">Added: {{ new Date(post.updatedAt).toDateString() }}</small>
+          <small class="text-muted">Posted: {{ new Date(post.updatedAt).toDateString() }}</small>
         </p>
       </div>
     </div>

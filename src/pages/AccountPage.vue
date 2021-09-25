@@ -5,16 +5,16 @@
     <!-- <p>{{ account.email }}</p> -->
 
     <p class="mdi mdi-bio">
-      {{ account.bio }}
+      : {{ account.bio }}
     </p>
     <p class="mdi mdi-github">
-      {{ account.github }}
+      : {{ account.github }}
     </p>
     <p class="mdi mdi-linkedin">
-      {{ account.linkedin }}
+      : {{ account.linkedin }}
     </p>
     <p class="mdi mdi-file-account">
-      Resume {{ account.resume }}
+      Resume: {{ account.resume }}
     </p>
     <p class="mdi mdi-school-outline">
       {{ account.graduated }}
@@ -27,6 +27,8 @@
     <form @submit.prevent="updateAccount()">
       <h3> cover image</h3>
       <input type="text" v-model="account.coverImg"><br />
+      <h3> Bio </h3>
+      <input type="text" v-model="account.bio"><br />
       <h3> name</h3>
       <input type="text" v-model="account.name" placeholder="Name"><br />
       <h3> profile Pic</h3>

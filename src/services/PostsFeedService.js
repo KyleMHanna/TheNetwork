@@ -33,6 +33,7 @@ class PostsFeedService {
 
   async likePost(id) {
     await api.post(`api/posts/${id}/like`)
+    // AppState.posts = new Post(res.data)
     this.getPosts()
   }
 
