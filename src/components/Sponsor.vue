@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-2 card">
-    <img :src="sponsor.banner" class="">
+    <img :src="sponsor.square" class="">
   </div>
 </template>
 

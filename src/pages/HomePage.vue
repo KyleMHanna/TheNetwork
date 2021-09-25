@@ -23,7 +23,7 @@ export default {
         Pop.toast(error.message, 'error')
       }
       try {
-        await sponsorService.getSponsors
+        await sponsorService.getSponsors()
       } catch (error) {
         Pop.toast(error.message, 'error')
       }

@@ -3,7 +3,7 @@ import { api } from './AxiosService'
 import { Sponsor } from '../models/Sponsor'
 import { logger } from '../utils/Logger'
 class SponsorService {
-  async getSponsor() {
+  async getSponsors() {
     const res = await api.get('api/ads')
     logger.log('Sponsor', res.data)
     AppState.Sponsor = res.data.map(a => new Sponsor(a))

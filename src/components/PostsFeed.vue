@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-3 py-3">
+  <div class="col-md-4 py-3">
     <div class="card" style="">
       <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == post.creatorId">
         <i class="mdi mdi-delete text-danger f-20 selectable" @click="deletePost()"></i>
@@ -24,6 +24,8 @@
       </div>
     </div>
   </div>
+  <!-- <div class="col-md-2 py-3">
+  </div> -->
 </template>
 
 <script>
