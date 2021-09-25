@@ -5,7 +5,7 @@
         <img
           alt="logo"
           src="https://static-cdn.jtvnw.net/jtv_user_pictures/kambrodian-profile_image-28f4aec0fe4f5c8f-300x300.png"
-          height="45"
+          height="65"
         />
       </div>
     </router-link>

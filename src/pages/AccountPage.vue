@@ -2,7 +2,7 @@
   <div class="about text-center">
     <h1>Welcome {{ account.name }}</h1>
     <img class="rounded" :src="account.picture" alt="//placehold.it/300x300" />
-    <p>{{ account.email }}</p>
+    <!-- <p>{{ account.email }}</p> -->
 
     <p class="mdi mdi-bio">
       {{ account.bio }}
