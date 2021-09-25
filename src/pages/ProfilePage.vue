@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <PostsFeed v-for="p in post" :key="p.id" :posts="p" />
+      <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
     </div>
     <div class="row" v-else>
       <h3>No Content</h3>
@@ -58,6 +58,7 @@ export default {
       profile: computed(() => AppState.profile),
       posts: computed(() => AppState.posts),
       postsData: computed(() => AppState.postsData),
+      currentPage: computed(() => AppState.currentPage),
       async getOlderPage() {
         try {
           await postsFeedService.getOlderPage({ creatorId: route.params.id })
