@@ -24,6 +24,7 @@
         </ul>
       </div>
     </div>
+
     <div class="bottom-part">
       <Auth />
     </div>

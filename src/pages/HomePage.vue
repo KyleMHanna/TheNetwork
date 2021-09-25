@@ -33,7 +33,7 @@ import { computed, onMounted } from '@vue/runtime-core'
 import { postsFeedService } from '../services/PostsFeedService.js'
 import Pop from '../utils/Pop.js'
 import { AppState } from '../AppState.js'
-import { sponsorService } from '../services/SponsorService.js'
+import { adsService } from '../services/AdsService'
 export default {
   name: 'Home',
   setup() {
@@ -44,14 +44,14 @@ export default {
         Pop.toast(error.message, 'error')
       }
       try {
-        await sponsorService.getSponsors()
+        await adsService.getAds()
       } catch (error) {
         Pop.toast(error.message, 'error')
       }
     })
     return {
       posts: computed(() => AppState.posts),
-      sponsor: computed(() => AppState.sponsors),
+      ad: computed(() => AppState.ads),
       postsData: computed(() => AppState.postsData),
       currentPage: computed(() => AppState.currentPage),
       like: computed(() => AppState.likes),
