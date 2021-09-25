@@ -1,7 +1,17 @@
 <template>
   <div class="container-fluid">
     <div class="profile-header" v-if="profile">
-      <div class="row cover-img" :style="{backgroundImage: `url(${profile.coverImg})`}">
+      <div class="row cover-img img-fluid" :style="{backgroundImage: `url(${profile.coverImg})`}">
+        <h1 class="text-dark">
+          {{ profile.name }}
+        </h1>
+        <img class="rounded profile-img img-fluid" :src="profile.picture" alt="//placehold.it/300x300" id="profile-img">
+        <p class="mdi mdi-bio mdi-48px text-dark">
+          : {{ profile.bio }}
+        </p>
+        <p class="mdi mdi-school-outline mdi-24px text-dark">
+          {{ profile.graduated }}
+        </p>
       </div>
     </div>
     <div v-else>
@@ -9,25 +19,24 @@
         ....Loading
       </h4>
     </div>
-
-    <div class="row" v-if="posts.length > 0">
-      <div class="container-fluid">
-        <div class="row">
-          <div>
-            <button :disabled="currentPage === 1" @click="getNewerPage()" class="btn btn-secondary">
-              Newer
-            </button>
-            <button @click="getOlderPage()" class="btn btn-secondary">
-              Older
-            </button>
-          </div>
+  </div>
+  <div class="row" v-if="posts.length > 0">
+    <div class="container-fluid">
+      <div class="row">
+        <div>
+          <button :disabled="currentPage === 1" @click="getNewerPage()" class="btn btn-secondary">
+            Newer
+          </button>
+          <button @click="getOlderPage()" class="btn btn-secondary">
+            Older
+          </button>
         </div>
       </div>
-      <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
     </div>
-    <div class="row" v-else>
-      <h3>No Content</h3>
-    </div>
+    <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
+  </div>
+  <div class="row" v-else>
+    <h3>No Content</h3>
   </div>
 </template>
 
@@ -40,6 +49,7 @@ import Pop from '../utils/Pop'
 import { AppState } from '../AppState'
 export default {
   setup() {
+    const account = computed(() => AppState.account)
     const route = useRoute()
     async function getPosts() {
       try {
@@ -55,6 +65,7 @@ export default {
       }
     })
     return {
+      account,
       profile: computed(() => AppState.profile),
       posts: computed(() => AppState.posts),
       postsData: computed(() => AppState.postsData),
@@ -81,8 +92,13 @@ export default {
 <style lang="scss" scoped>
 
 .cover-img{
-  height: 30vh;
-  background-position: center center;
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+}
+.profile-img{
+  max-height: 200px;
+  max-width: 200px
 }
 
 </style>

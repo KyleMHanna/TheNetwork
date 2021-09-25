@@ -2,12 +2,19 @@
 <template>
   <div class="container-fluid">
     <div class="row py-2">
-      <div>
-        <button :disabled="currentPage === 1" @click="getNewerPage()" class="btn btn-secondary elevation-5">
-          Newer
-        </button>
-        <button @click="getOlderPage()" class="btn btn-secondary elevation-5">
-          Older
+      <div class="col-md-6">
+        <div>
+          <button :disabled="currentPage === 1" @click="getNewerPage()" class="btn btn-secondary elevation-5">
+            Newer
+          </button>
+          <button @click="getOlderPage()" class="btn btn-secondary elevation-5">
+            Older
+          </button>
+        </div>
+      </div>
+      <div class="col-md-6 text-end ">
+        <button class="btn btn-secondary elevation-5 " type="button" data-bs-toggle="modal" data-bs-target="#post-form">
+          Create Post
         </button>
       </div>
     </div>
