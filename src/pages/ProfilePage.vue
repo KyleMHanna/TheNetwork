@@ -9,7 +9,20 @@
         ....Loading
       </h4>
     </div>
+
     <div class="row" v-if="posts.length > 0">
+      <div class="container-fluid">
+        <div class="row">
+          <div>
+            <button @click="getNewerPage()" class="btn btn-secondary">
+              Newer
+            </button>
+            <button @click="getOlderPage()" class="btn btn-secondary">
+              Older
+            </button>
+          </div>
+        </div>
+      </div>
       <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
     </div>
     <div class="row" v-else>
@@ -43,7 +56,22 @@ export default {
     })
     return {
       profile: computed(() => AppState.profile),
-      posts: computed(() => AppState.posts)
+      posts: computed(() => AppState.posts),
+      postsData: computed(() => AppState.postsData),
+      async getOlderPage() {
+        try {
+          await postsFeedService.getOlderPage({ creatorId: route.params.id })
+        } catch (error) {
+          Pop.toast('error', error)
+        }
+      },
+      async getNewerPage() {
+        try {
+          await postsFeedService.getNewerPage({ creatorId: route.params.id })
+        } catch (error) {
+          Pop.toast('error', error)
+        }
+      }
     }
   }
 }
