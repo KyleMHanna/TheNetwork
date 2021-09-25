@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row py-2">
       <div>
-        <button @click="getNewerPage()" class="btn btn-secondary elevation-5">
+        <button :disabled="currentPage === 1" @click="getNewerPage()" class="btn btn-secondary elevation-5">
           Newer
         </button>
         <button @click="getOlderPage()" class="btn btn-secondary elevation-5">
@@ -15,6 +15,11 @@
   <div class="container-fluid">
     <div class="row">
       <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
+    </div>
+    <div class="row">
+      <div class="col">
+        <Sponsor v-for="s in sponsor" :key="s.id" :sponsor="s" />
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +49,7 @@ export default {
       posts: computed(() => AppState.posts),
       sponsor: computed(() => AppState.sponsors),
       postsData: computed(() => AppState.postsData),
+      currentPage: computed(() => AppState.currentPage),
       async getOlderPage() {
         try {
           await postsFeedService.getOlderPage()

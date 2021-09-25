@@ -4,26 +4,27 @@
     <img class="rounded" :src="account.picture" alt="//placehold.it/300x300" />
     <!-- <p>{{ account.email }}</p> -->
 
-    <p class="mdi mdi-bio">
+    <p class="mdi mdi-bio mdi-48px">
       : {{ account.bio }}
     </p>
-    <p class="mdi mdi-github">
+    <p class="mdi mdi-github mdi-48px">
       : {{ account.github }}
     </p>
-    <p class="mdi mdi-linkedin">
+    <p class="mdi mdi-linkedin mdi-48px">
       : {{ account.linkedin }}
     </p>
-    <p class="mdi mdi-file-account">
+    <p class="mdi mdi-file-account mdi-48px">
       Resume: {{ account.resume }}
     </p>
-    <p class="mdi mdi-school-outline">
+    <p class="mdi mdi-school-outline mdi-24px">
       {{ account.graduated }}
     </p>
-    <p class="mdi mdi-microsoft-xbox">
+    <p class="mdi mdi-microsoft-xbox mdi-24px">
       {{ account.class }}
     </p>
   </div>
-  <button class="selectable mdi mdi-cog 48px " @click.prevent="updateProfile()"></button>
+  <button class="selectable mdi mdi-cog mdi-48px " @click.prevent="updateProfile()">
+  </button>
   <div class="row visually-hidden" id="update-Profile">
     <form @submit.prevent="updateAccount()">
       <h3> cover image</h3>

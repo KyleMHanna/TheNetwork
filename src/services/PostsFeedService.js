@@ -33,8 +33,8 @@ class PostsFeedService {
 
   async likePost(id) {
     await api.post(`api/posts/${id}/like`)
-    // AppState.posts = new Post(res.data)
-    this.getPosts()
+    AppState.likes.filter((f) => f.like)
+    await this.getPosts()
   }
 
   async searchPost(query = {}) {
@@ -45,7 +45,7 @@ class PostsFeedService {
   async getOlderPage() {
     AppState.posts = []
     AppState.postsData = {}
-    AppState.currentPage++
+    AppState.currentPage--
     const res = await api.get(`api/posts?page=${AppState.currentPage}`)
     AppState.postsData = res.data
     AppState.posts = res.data.posts.map(p => new Post(p))
@@ -54,7 +54,7 @@ class PostsFeedService {
   async getNewerPage() {
     AppState.posts = []
     AppState.postsData = {}
-    AppState.currentPage--
+    AppState.currentPage++
     const res = await api.get(`api/posts?page=${AppState.currentPage}`)
     AppState.postsData = res.data
     AppState.posts = res.data.posts.map(p => new Post(p))

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-2 card">
+  <div class="component p-3">
     <img :src="sponsor.banner" class="">
   </div>
 </template>

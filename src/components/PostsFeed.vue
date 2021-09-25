@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-3 py-3 elevation-5 p-3">
-    <div class="card" style="">
+    <div class="card text-center" style="">
       <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == post.creatorId">
         <i class="mdi mdi-delete text-danger f-20 selectable" @click="deletePost()"></i>
       </div>
@@ -9,7 +9,7 @@
           <i class="mdi mdi-thumb-up text-primary" @click="likePost()">{{ post.likeIds.length }}</i>
         </button>
       </div>
-      <img :src="post.imgUrl" class="card-img-top img-style img-fluid elevation-5" alt="">
+      <img :src="post.imgUrl" class="card-img-top img-style img-fluid elevation-5 " alt="">
       <div class="card-body elevation-5">
         <h5 class="card-title">
           {{ post.body }}
@@ -46,6 +46,7 @@ export default {
     return {
       account: computed(() => AppState.account),
       posts: computed(() => AppState.post),
+      likes: computed(() => AppState.likes),
 
       async deletePost() {
         try {
@@ -73,6 +74,6 @@ export default {
 <style scoped lang="scss">
 .img-style{
   height: 400px;
-  max-width: 450px;
+  width: 450px;
 }
 </style>

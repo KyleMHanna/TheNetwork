@@ -14,7 +14,7 @@
       <div class="container-fluid">
         <div class="row">
           <div>
-            <button @click="getNewerPage()" class="btn btn-secondary">
+            <button :disabled="currentPage === 1" @click="getNewerPage()" class="btn btn-secondary">
               Newer
             </button>
             <button @click="getOlderPage()" class="btn btn-secondary">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
+      <PostsFeed v-for="p in post" :key="p.id" :posts="p" />
     </div>
     <div class="row" v-else>
       <h3>No Content</h3>

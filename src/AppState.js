@@ -11,5 +11,6 @@ export const AppState = reactive({
   sponsors: [],
   postSearch: [],
   postsData: {},
-  currentPage: 1
+  currentPage: 1,
+  likes: []
 })
