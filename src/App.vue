@@ -12,9 +12,9 @@
   </main>
   <footer>
     <div class="bg-dark text-light text-center p-4">
-      <Sponsor v-for="s in sponsor" :key="s.id" :sponsor="s" />
+      <Sponsor v-for="s in Sponsor" :key="s.id" :sponsor="s" />
 
-      Sponsors are going here
+      🔥🔥🔥Sponsors are going here🔥🔥🔥
     </div>
   </footer>
 

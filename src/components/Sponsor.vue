@@ -1,14 +1,15 @@
 <template>
   <div class="col-md-2 card">
-    <img :src="sponsor.square" class="">
+    <img :src="sponsor.banner" class="">
   </div>
 </template>
 
 <script>
 import { computed } from '@vue/runtime-core'
 import { AppState } from '../AppState'
-// import { sponsorService } from '../services/SponsorService.js'
-// import Pop from '../utils/Pop.js'
+import { sponsorService } from '../services/SponsorService.js'
+import Pop from '../utils/Pop.js'
+
 export default {
   props: {
     sponsor: {
@@ -16,9 +17,16 @@ export default {
       required: true
     }
   },
-  setup() {
+  setup(props) {
     return {
-      sponsors: computed(() => AppState.sponsors)
+      sponsors: computed(() => AppState.sponsors),
+      async getSponsors() {
+        try {
+          await sponsorService.getSponsors(props.sponsor.banner)
+        } catch (error) {
+          Pop.toast(error.message, 'error')
+        }
+      }
     }
   }
 }

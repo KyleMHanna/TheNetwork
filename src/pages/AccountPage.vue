@@ -4,12 +4,24 @@
     <img class="rounded" :src="account.picture" alt="//placehold.it/300x300" />
     <p>{{ account.email }}</p>
 
-    <p>{{ account.bio }}</p>
-    <p>{{ account.github }}</p>
-    <p>{{ account.linkedin }}</p>
-    <p>{{ account.resume }}</p>
-    <p>{{ account.graduated }}</p>
-    <p>{{ account.class }}</p>
+    <p class="mdi mdi-bio">
+      {{ account.bio }}
+    </p>
+    <p class="mdi mdi-github">
+      {{ account.github }}
+    </p>
+    <p class="mdi mdi-linkedin">
+      {{ account.linkedin }}
+    </p>
+    <p class="mdi mdi-file-account">
+      Resume {{ account.resume }}
+    </p>
+    <p class="mdi mdi-school-outline">
+      {{ account.graduated }}
+    </p>
+    <p class="mdi mdi-microsoft-xbox">
+      {{ account.class }}
+    </p>
   </div>
   <div class="row">
     <form @submit.prevent="updateAccount()">
@@ -57,6 +69,6 @@ export default {
 
 <style scoped>
 img {
-  max-width: 100px;
+  max-width: 500px;
 }
 </style>

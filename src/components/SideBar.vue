@@ -10,12 +10,12 @@
         <ul class="nav-links ps-0">
           <li class="nav-link">
             <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#post-form">
-              Create Post
+              Post
             </button>
           </li>
           <li class="nav-link">
             <router-link class="btn btn-secondary" type="button" :to="{ name: 'Account' }">
-              Manage Account
+              Account
             </router-link>
           </li>
           <li class="nav-link">
