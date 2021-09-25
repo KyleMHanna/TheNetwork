@@ -1,28 +1,28 @@
 <template>
   <form @submit.prevent="createPost()">
     <div class="form-group">
-      <label for="title">Img Url</label>
+      <label for="title">Picture</label>
       <input type="text"
              class="form-control bg-light"
              name="imgUrl"
-             placeholder="Img Url...."
+             placeholder="📷"
              v-model="editable.imgUrl"
              required
       >
     </div>
     <div class="form-group">
-      <label for="body">body</label>
+      <label for="body">Whats on your mind?</label>
       <input type="text"
              class="form-control bg-light"
              name="title"
-             placeholder="Title...."
+             placeholder="🤔"
              v-model="editable.body"
              required
       >
 
       <div class="form-group">
         <button type="submit" class="btn btn-success mt-2">
-          Create Post
+          Post
         </button>
       </div>
     </div>

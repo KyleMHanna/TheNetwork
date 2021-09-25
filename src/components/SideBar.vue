@@ -1,12 +1,14 @@
 <template>
   <div class="sidebar d-md-flex flex-column justify-content-between bg-primary d-none d-md-block sticky">
     <div class="top-part">
-      <div class="text-white py-3">
-        <h3 class="">
-          The Network
-        </h3>
-      </div>
       <div class="links">
+        <div class="text-white py-3">
+          <li class="nav-link">
+            <router-link class="btn btn-secondary" type="button" :to="{ name: 'Home' }">
+              The Network
+            </router-link>
+          </li>
+        </div>
         <ul class="nav-links ps-0">
           <li class="nav-link">
             <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#post-form">

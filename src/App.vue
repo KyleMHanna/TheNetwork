@@ -12,7 +12,7 @@
   </main>
   <footer>
     <div class="bg-dark text-light text-center p-4">
-      <Sponsor v-for="s in Sponsor" :key="s.id" :sponsor="s" />
+      <!-- <Sponsor v-for="s in Sponsor" :key="s.id" :sponsor="s" /> -->
 
       🔥🔥🔥Sponsors are going here🔥🔥🔥
     </div>
@@ -20,7 +20,7 @@
 
   <Modal id="post-form">
     <template #modal-title>
-      <h4>Post Form</h4>
+      <h4>Create Post</h4>
     </template>
     <template #modal-body>
       <PostForm />

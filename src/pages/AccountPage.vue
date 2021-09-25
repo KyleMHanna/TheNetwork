@@ -67,7 +67,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 img {
   max-width: 500px;
 }

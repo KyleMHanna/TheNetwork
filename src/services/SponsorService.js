@@ -1,7 +1,7 @@
 import { AppState } from '../AppState'
 import { api } from './AxiosService'
-
 import { logger } from '../utils/Logger'
+
 class SponsorService {
   async getSponsors() {
     const res = await api.get('api/ads')
