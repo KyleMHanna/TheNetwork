@@ -24,6 +24,11 @@ class PostsFeedService {
     logger.log('delete res', res)
     AppState.posts = AppState.posts.filter(p => p.id !== postId)
   }
+
+  async editPost(post) {
+    const res = await api.put(`api/posts/${post.id}`, post)
+    AppState.posts = new Post(res.data)
+  }
 }
 
 export const postsFeedService = new PostsFeedService()

@@ -4,7 +4,7 @@
       <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == post.creatorId">
         <i class="mdi mdi-delete text-danger f-20 selectable" @click="deletePost()"></i>
       </div>
-      <img :src="post.imgUrl" class="card-img-top img-style img-fluid" alt="...">
+      <img :src="post.imgUrl" class="card-img-top img-style img-fluid" alt="">
       <div class="card-body">
         <h5 class="card-title">
           {{ post.body }}
@@ -18,6 +18,9 @@
             {{ post.creator.name }}
           </span>
         </router-link>
+        <p class="card-text">
+          <small class="text-muted">Added: {{ new Date(post.updatedAt).toDateString() }}</small>
+        </p>
       </div>
     </div>
   </div>

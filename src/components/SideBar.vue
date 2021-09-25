@@ -14,9 +14,9 @@
             </button>
           </li>
           <li class="nav-link">
-            <!-- <router-link class="selectable rounded p-2 text-success lighten-30" :to="{name: 'Houses'}">
-              Houses
-            </router-link> -->
+            <router-link :to="{ name: 'Account' }">
+              Manage Account
+            </router-link>
           </li>
           <li class="nav-link">
             <!-- <router-link class="selectable rounded p-2 text-success lighten-30" :to="{name: 'Jobs'}">

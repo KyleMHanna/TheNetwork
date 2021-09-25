@@ -7,6 +7,7 @@ export const AppState = reactive({
   /** @type {import('.models/Post.js').Post[]} */
   posts: [],
   profile: null,
+  /** @type {import('.models/Sponsor.js').Sponsor[]} */
   sponsor: [],
   postSearch: [],
   profileSearch: [],

@@ -28,6 +28,12 @@ const routes = [
     component: loadPage('ProfilePage')
 
   }
+  //   {
+  //   path: '/profiles/:id/posts',
+  //   name: 'Posts',
+  //   component: loadPage('ProfilePage')
+
+  // }
 ]
 
 export const router = createRouter({

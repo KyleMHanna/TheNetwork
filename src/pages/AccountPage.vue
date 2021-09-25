@@ -1,8 +1,15 @@
 <template>
   <div class="about text-center">
     <h1>Welcome {{ account.name }}</h1>
-    <img class="rounded" :src="account.picture" alt="" />
+    <img class="rounded" :src="account.picture" alt="//placehold.it/300x300" />
     <p>{{ account.email }}</p>
+
+    <p>Bio:{{ account.bio }}</p>
+    <p>Github:{{ account.github }}</p>
+    <p>Linkedin:{{ account.linkedin }}</p>
+    <p>Resume:{{ account.resume }}</p>
+    <p>Graduated: {{ account.graduated }}</p>
+    <p>{{ account.class }}</p>
   </div>
 </template>
 

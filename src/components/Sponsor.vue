@@ -7,8 +7,10 @@
 </template>
 
 <script>
-import { sponsorService } from '../services/SponsorService.js'
-import Pop from '../utils/Pop.js'
+import { computed } from '@vue/runtime-core'
+import { AppState } from '../AppState'
+// import { sponsorService } from '../services/SponsorService.js'
+// import Pop from '../utils/Pop.js'
 export default {
   name: 'Sponsor',
   props: {
@@ -16,19 +18,11 @@ export default {
   },
   setup(props) {
     return {
-      async getSponsors() {
-        try {
-          await sponsorService.getSponsors(props)
-        } catch (error) {
-          Pop.toast(error, 'error')
-        }
-      }
-
+      sponsors: computed(() => AppState.sponsors)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 </style>
