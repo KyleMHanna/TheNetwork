@@ -34,6 +34,11 @@ class PostsFeedService {
     await api.post(`api/posts/${id}/like`)
     this.getPosts()
   }
+
+  async searchPost(query) {
+    const res = await api.get(`api/posts?query=${query}`)
+    AppState.postSearch = res.data.posts
+  }
 }
 
 export const postsFeedService = new PostsFeedService()

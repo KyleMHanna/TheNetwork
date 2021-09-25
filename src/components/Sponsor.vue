@@ -10,13 +10,10 @@ import { AppState } from '../AppState'
 // import { sponsorService } from '../services/SponsorService.js'
 // import Pop from '../utils/Pop.js'
 export default {
-  name: 'Sponsor',
-  props: {
-    sponsor: { type: Object, required: true }
-  },
-  setup(props) {
+
+  setup() {
     return {
-      sponsors: computed(() => AppState.sponsor)
+      sponsor: computed(() => AppState.sponsors)
     }
   }
 }
