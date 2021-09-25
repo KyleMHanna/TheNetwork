@@ -42,11 +42,22 @@ class PostsFeedService {
     AppState.posts = res.data.posts.map(m => new Post(m))
   }
 
-  async next(url) {
-    const res = await api.get(url)
-    AppState.posts = res.data.posts
-    AppState.older = res.data.older
-    AppState.newer = res.data.newer
+  async getOlderPage() {
+    AppState.posts = []
+    AppState.postsData = {}
+    AppState.currentPage++
+    const res = await api.get(`api/posts?page=${AppState.currentPage}`)
+    AppState.postsData = res.data
+    AppState.posts = res.data.posts.map(p => new Post(p))
+  }
+
+  async getNewerPage() {
+    AppState.posts = []
+    AppState.postsData = {}
+    AppState.currentPage--
+    const res = await api.get(`api/posts?page=${AppState.currentPage}`)
+    AppState.postsData = res.data
+    AppState.posts = res.data.posts.map(p => new Post(p))
   }
 }
 

@@ -2,6 +2,18 @@
 <template>
   <div class="container-fluid">
     <div class="row">
+      <div>
+        <button @click="getNewerPage()" class="btn btn-secondary">
+          Newer
+        </button>
+        <button @click="getOlderPage()" class="btn btn-secondary">
+          Older
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
       <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
     </div>
   </div>
@@ -30,7 +42,23 @@ export default {
     })
     return {
       posts: computed(() => AppState.posts),
-      sponsor: computed(() => AppState.sponsors)
+      sponsor: computed(() => AppState.sponsors),
+      postsData: computed(() => AppState.postsData),
+      async getOlderPage() {
+        try {
+          await postsFeedService.getOlderPage()
+        } catch (error) {
+          Pop.toast('error', error)
+        }
+      },
+      async getNewerPage() {
+        try {
+          await postsFeedService.getNewerPage()
+        } catch (error) {
+          Pop.toast('error', error)
+        }
+      }
+
     }
   }
 }

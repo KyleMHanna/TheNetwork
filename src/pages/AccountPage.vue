@@ -59,7 +59,10 @@ export default {
       account,
       async updateAccount() {
         try {
+          const yes = await Pop.confirm('Are you sure you want to Update?')
+          if (!yes) { return }
           await accountService.editAccount(account.value)
+          Pop.toast('success')
         } catch (error) {
           Pop.toast(error, 'error')
         }

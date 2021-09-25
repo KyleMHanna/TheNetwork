@@ -26,6 +26,19 @@
       </div>
     </div>
   </div>
+  <!-- <div class="container">
+    <div class="row">
+      <div>
+        <button @click="getNewerPage()" class="btn btn-info">
+          Newer
+        </button>
+        <button @click="getOlderPage()" class="btn btn-info">
+          Older
+        </button>
+      </div>
+    </div>
+  </div> -->
+
   <!-- <div class="col-md-2 py-3">
   </div> -->
 </template>
@@ -48,9 +61,27 @@ export default {
     return {
       account: computed(() => AppState.account),
       posts: computed(() => AppState.post),
+      // postsData: computed(() => AppState.postsData),
+      // async getOlderPage() {
+      //   try {
+      //     await postsFeedService.getOlderPage()
+      //   } catch (error) {
+      //     Pop.toast('error', error)
+      //   }
+      // },
+      // async getNewerPage() {
+      //   try {
+      //     await postsFeedService.getNewerPage()
+      //   } catch (error) {
+      //     Pop.toast('error', error)
+      //   }
+      // },
       async deletePost() {
         try {
+          const yes = await Pop.confirm('Are you sure you want to delete?')
+          if (!yes) { return }
           await postsFeedService.deletePost(props.post.id)
+          Pop.toast('Deleted!', 'success')
         } catch (error) {
           Pop.toast(error, 'error')
         }
@@ -71,6 +102,6 @@ export default {
 <style scoped lang="scss">
 .img-style{
   height: 400px;
-  width: 450px;
+  max-width: 450px;
 }
 </style>
