@@ -4,13 +4,15 @@
       <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == post.creatorId">
         <i class="mdi mdi-delete text-danger f-20 selectable" @click="deletePost()"></i>
       </div>
+      <div class="on-hover position-absolute" style="left: 1rem; top: 1rem">
+        <button>
+          <i class="mdi mdi-thumb-up text-primary" @click="likePost()">{{ post.likeIds.length }}</i>
+        </button>
+      </div>
       <img :src="post.imgUrl" class="card-img-top img-style img-fluid" alt="">
       <div class="card-body">
         <h5 class="card-title">
           {{ post.body }}
-          <button>
-            <i class="mdi mdi-thumb-up text-primary" @click="likePost()">{{ post.likeIds.length }}</i>
-          </button>
         </h5>
         <router-link :to="{name: 'Profile', params: {id: post.creatorId}}" class="selectable">
           <span>
@@ -54,7 +56,11 @@ export default {
         }
       },
       async likePost() {
-        await postsFeedService.likePost(props.post.id)
+        try {
+          await postsFeedService.likePost(props.post.id)
+        } catch (error) {
+          Pop.toast(error, 'error')
+        }
       }
     }
   }

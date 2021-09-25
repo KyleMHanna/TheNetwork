@@ -9,7 +9,8 @@ class PostsFeedService {
     AppState.posts = []
     const res = await api.get('api/posts' + convertToQuery(query))
     AppState.posts = res.data.posts.map(p => new Post(p))
-    // FIXME -
+    AppState.older = res.data.older
+    AppState.newer = res.data.newer
     logger.log(res.data, 'from the get posts service')
   }
 
@@ -38,6 +39,13 @@ class PostsFeedService {
   async searchPost(query) {
     const res = await api.get(`api/posts?query=${query}`)
     AppState.postSearch = res.data.posts
+  }
+
+  async next(url) {
+    const res = await api.get(url)
+    AppState.posts = res.data.posts
+    AppState.older = res.data.older
+    AppState.newer = res.data.newer
   }
 }
 
