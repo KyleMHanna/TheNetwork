@@ -9,7 +9,7 @@
         <h5 class="card-title">
           {{ post.body }}
           <button>
-            <i class="mdi mdi-thumb-up text-primary">{{ post.likeIds.length }}</i>
+            <i class="mdi mdi-thumb-up text-primary" @click="likePost()">{{ post.likeIds.length }}</i>
           </button>
         </h5>
         <router-link :to="{name: 'Profile', params: {id: post.creatorId}}" class="selectable">
@@ -43,14 +43,17 @@ export default {
   setup(props) {
     return {
       account: computed(() => AppState.account),
+      posts: computed(() => AppState.post),
       async deletePost() {
         try {
           await postsFeedService.deletePost(props.post.id)
         } catch (error) {
           Pop.toast(error, 'error')
         }
+      },
+      async likePost() {
+        await postsFeedService.likePost(props.post.id)
       }
-
     }
   }
 }

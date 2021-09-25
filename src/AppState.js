@@ -8,7 +8,7 @@ export const AppState = reactive({
   posts: [],
   profile: null,
   /** @type {import('.models/Sponsor.js').Sponsor[]} */
-  sponsor: [],
+  sponsors: [],
   postSearch: [],
   profileSearch: [],
   older: null,

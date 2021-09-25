@@ -12,7 +12,9 @@
   </main>
   <footer>
     <div class="bg-dark text-light text-center p-4">
-      Made with 💖 by CodeWorks
+      <Sponsor v-for="a in sponsors" :key="a.id" :sponsor="a" />
+
+      Sponsors are going here
     </div>
   </footer>
 

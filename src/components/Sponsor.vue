@@ -1,8 +1,6 @@
 <template>
-  <div class="row justify-content-center">
-    <div class="col-md-2 card">
-      <img :src="sponsor.square" class="">
-    </div>
+  <div class="col-md-2 card">
+    <img :src="sponsor.banner" class="">
   </div>
 </template>
 
@@ -18,7 +16,7 @@ export default {
   },
   setup(props) {
     return {
-      sponsors: computed(() => AppState.sponsors)
+      sponsors: computed(() => AppState.sponsor)
     }
   }
 }

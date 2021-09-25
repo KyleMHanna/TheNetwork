@@ -29,6 +29,11 @@ class PostsFeedService {
     const res = await api.put(`api/posts/${post.id}`, post)
     AppState.posts = new Post(res.data)
   }
+
+  async likePost(id) {
+    await api.post(`api/posts/${id}/like`)
+    this.getPosts()
+  }
 }
 
 export const postsFeedService = new PostsFeedService()
