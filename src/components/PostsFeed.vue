@@ -9,7 +9,7 @@
           <i class="mdi mdi-thumb-up text-primary" @click="likePost">{{ post.likeIds.length }}</i>
         </button>
       </div>
-      <img :src="post.imgUrl" class="card-img-top img-style img-fluid elevation-5 " alt="">
+      <img v-if="post.imgUrl" :src="post.imgUrl" class="card-img-top img-style img-fluid elevation-5 " alt="">
       <div class="card-body elevation-5">
         <h5 class="card-title">
           {{ post.body }}
