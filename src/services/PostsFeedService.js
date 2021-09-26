@@ -39,6 +39,11 @@ class PostsFeedService {
     this.getPosts(creatorId)
   }
 
+  async findPostByQuery(query) {
+    const res = await api.get(`api/posts/?query=${query}`)
+    AppState.posts = res.data.posts.map(m => new Post(m))
+  }
+
   async searchPost(query = {}) {
     const res = await api.get(`api/posts?query=${query}`)
     AppState.posts = res.data.posts.map(m => new Post(m))

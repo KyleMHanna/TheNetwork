@@ -68,6 +68,7 @@ export default {
     return {
       account,
       profile: computed(() => AppState.profile),
+      // TODO -  This is the sauce right here
       posts: computed(() => AppState.posts.filter(p => p.creatorId === route.params.id)),
       postsData: computed(() => AppState.postsData),
       currentPage: computed(() => AppState.currentPage),
