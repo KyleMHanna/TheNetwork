@@ -32,8 +32,8 @@ class PostsFeedService {
   }
 
   async likePost(id) {
-    await api.post(`api/posts/${id}/like`)
-    AppState.likes.filter((f) => f.like)
+    const res = await api.post(`api/posts/${id}/like`)
+    AppState.posts.id = res.data
     await this.getPosts()
   }
 

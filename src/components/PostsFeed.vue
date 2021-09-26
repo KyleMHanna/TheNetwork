@@ -1,12 +1,12 @@
 <template>
-  <div class="col-md-3 py-3 elevation-5 p-3">
+  <div class="col-md-3  elevation-5 p-3 ">
     <div class="card text-center" style="">
       <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == post.creatorId">
         <i class="mdi mdi-delete text-danger f-20 selectable" @click="deletePost()"></i>
       </div>
       <div class="on-hover position-absolute" style="left: 1rem; top: 1rem">
         <button>
-          <i class="mdi mdi-thumb-up text-primary" @click="likePost()">{{ post.likeIds.length }}</i>
+          <i class="mdi mdi-thumb-up text-primary" @click="likePost">{{ post.likeIds.length }}</i>
         </button>
       </div>
       <img :src="post.imgUrl" class="card-img-top img-style img-fluid elevation-5 " alt="">
@@ -76,4 +76,9 @@ export default {
   height: 400px;
   width: 450px;
 }
+// .scrollable-y {
+//   max-height: 50%;
+//    overflow-y:scroll
+// }
+
 </style>

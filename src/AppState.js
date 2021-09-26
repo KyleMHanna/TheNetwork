@@ -9,8 +9,16 @@ export const AppState = reactive({
   profile: null,
   /** @type {import('.models/Ad.js').Ad[]} */
   ads: [],
+  next: '',
+  previous: '',
   postSearch: [],
   postsData: {},
   currentPage: 1,
-  likes: []
+  likes: [],
+  url: {
+    page: 0,
+    newer: '',
+    older: ''
+  }
+
 })

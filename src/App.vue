@@ -4,7 +4,7 @@
   </header>
   <main class="container-fluid">
     <div class="row">
-      <SideBar class="col-md-2" />
+      <SideBar class="col-md-2 sidebar " />
       <div class="col-md-10">
         <router-view />
       </div>
@@ -41,7 +41,7 @@ export default {
 <style lang="scss">
 @import "./assets/scss/main.scss";
 .sidebar{
-  height: 315vh;
+  height: 100vh;
 }
 .viewport{
   height: 100vh;

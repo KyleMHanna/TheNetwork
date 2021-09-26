@@ -20,11 +20,12 @@
     </div>
   </div>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row scrollable-y">
       <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
     </div>
-    <div class="row">
-    </div>
+    <!-- <div class="row">
+      <Ads />
+    </div> -->
   </div>
 </template>
 
@@ -55,6 +56,7 @@ export default {
       postsData: computed(() => AppState.postsData),
       currentPage: computed(() => AppState.currentPage),
       like: computed(() => AppState.likes),
+      url: computed(() => AppState.url),
       async getOlderPage() {
         try {
           await postsFeedService.getOlderPage()
@@ -76,5 +78,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.scrollable-y {
+  max-height: 100vh;
+  overflow-y:auto
+}
 </style>

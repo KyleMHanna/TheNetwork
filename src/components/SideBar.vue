@@ -20,6 +20,7 @@
             </router-link>
           </li>
           <li class="nav-link">
+            <!-- <Ads /> -->
           </li>
         </ul>
       </div>
