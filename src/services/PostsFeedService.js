@@ -29,12 +29,18 @@ class PostsFeedService {
     AppState.posts = new Post(res.data)
   }
 
+  // async likePost(id) {
+  //   logger.log(id, 'likes post id')
+  //   const res = await api.post(`api/posts/${id}/like`)
+  //   logger.log('likes post', res)
+  //   AppState.posts.id = res.data
+  //   this.getPosts()
   async likePost(id) {
-    logger.log(id, 'likes post id')
     const res = await api.post(`api/posts/${id}/like`)
-    logger.log('likes post', res)
-    AppState.posts.id = res.data
-    this.getPosts()
+    logger.log('likes post id', res.data.likes)
+    const i = AppState.posts.findIndex(p => p.id === id)
+    AppState.posts.splice(i, 1, new Post(res.data))
+    AppState.posts = [...AppState.posts]
   }
 
   async findPostByQuery(query) {

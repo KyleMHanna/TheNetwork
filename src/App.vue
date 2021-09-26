@@ -8,11 +8,12 @@
       <div class="col-md-10">
         <router-view />
       </div>
+      <!-- <div class="col-md-2"></div> -->
     </div>
   </main>
   <footer>
     <div>
-      <Ads class="container-fluid" />
+      <Ads class="container-fluid py-3" />
     </div>
   </footer>
 

@@ -23,9 +23,7 @@
     <div class="row scrollable-y">
       <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
     </div>
-    <!-- <div class="row">
-      <Ads />
-    </div> -->
+    <div class="col-md-1"></div>
   </div>
 </template>
 

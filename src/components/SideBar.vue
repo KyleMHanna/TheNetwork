@@ -20,7 +20,9 @@
             </router-link>
           </li>
           <li class="nav-link">
-            <!-- <Ads /> -->
+            <!-- <router-link :to="{ name: 'Profile' }">
+              Profile
+            </router-link> -->
           </li>
         </ul>
       </div>
