@@ -74,7 +74,7 @@ export default {
       currentPage: computed(() => AppState.currentPage),
       async getOlderPage() {
         try {
-          await postsFeedService.getOlderPage({ creatorId: route.params.id })
+          await postsFeedService.getOlderPage(route.params.id)
           logger.log({ creatorId: route.params.id }, 'id we are looking for')
         } catch (error) {
           Pop.toast('error', error)
@@ -82,7 +82,7 @@ export default {
       },
       async getNewerPage() {
         try {
-          await postsFeedService.getNewerPage({ creatorId: route.params.id })
+          await postsFeedService.getNewerPage(route.params.id)
         } catch (error) {
           Pop.toast('error', error)
         }

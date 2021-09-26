@@ -15,11 +15,6 @@ export const AppState = reactive({
   postsData: {},
   currentPage: 1,
   likes: [],
-  likeIds: [],
-  url: {
-    page: 0,
-    newer: '',
-    older: ''
-  }
+  likeIds: []
 
 })
