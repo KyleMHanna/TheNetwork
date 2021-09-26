@@ -42,7 +42,7 @@ export default {
 <style lang="scss">
 @import "./assets/scss/main.scss";
 .sidebar{
-  height: 70rem;
+  height: 65rem;
 }
 .viewport{
   height: 100vh;

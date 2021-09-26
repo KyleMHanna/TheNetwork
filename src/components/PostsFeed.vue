@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-6 elevation-5 p-3 ">
+  <div class="col-md-4 elevation-5 p-3 todoCARD  shadow-lg">
     <div class="card text-center" style="">
       <div class="on-hover position-absolute" style="right: 1rem; top: 1rem" v-if="account.id == post.creatorId">
         <i class="mdi mdi-delete text-danger f-20 selectable" @click="deletePost()"></i>
@@ -10,7 +10,7 @@
         </button>
       </div>
       <img v-if="post.imgUrl" :src="post.imgUrl" class="card-img-top img-style img-fluid elevation-5 justify-content-center" alt="">
-      <div class="card-body elevation-5 text-center">
+      <div class="card-body elevation-5 text-center postbody  shadow-lg">
         <h5 class="card-title">
           {{ post.body }}
         </h5>
@@ -79,6 +79,13 @@ export default {
 .img-style{
   height: 400px;
   width: 800px;
+}
+
+.todoCARD {
+    background-color: rgba(21, 21, 22, 0.52);
+}
+.postbody{
+    background-color: rgba(17, 102, 141, 0.322);
 }
 // .scrollable-y {
 //   max-height: 50%;
