@@ -31,10 +31,12 @@ class PostsFeedService {
     AppState.posts = new Post(res.data)
   }
 
-  async likePost(id) {
+  async likePost(id, creatorId) {
+    logger.log(id, 'likes post id')
     const res = await api.post(`api/posts/${id}/like`)
+    logger.log('likes post', res)
     AppState.posts.id = res.data
-    await this.getPosts()
+    this.getPosts(creatorId)
   }
 
   async searchPost(query = {}) {

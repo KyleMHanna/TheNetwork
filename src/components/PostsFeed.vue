@@ -33,6 +33,7 @@ import { computed } from '@vue/runtime-core'
 import { AppState } from '../AppState.js'
 import { postsFeedService } from '../services/PostsFeedService.js'
 import Pop from '../utils/Pop.js'
+import { logger } from '../utils/Logger'
 
 export default {
 
@@ -60,7 +61,8 @@ export default {
       },
       async likePost() {
         try {
-          await postsFeedService.likePost(props.post.id)
+          logger.log(props.post.creatorId, 'from the postfeed likes')
+          await postsFeedService.likePost(props.post.id, props.post.creatorId)
         } catch (error) {
           Pop.toast(error, 'error')
         }

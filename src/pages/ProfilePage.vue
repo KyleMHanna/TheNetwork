@@ -47,6 +47,7 @@ import { postsFeedService } from '../services/PostsFeedService'
 import { profilesService } from '../services/ProfilesService'
 import Pop from '../utils/Pop'
 import { AppState } from '../AppState'
+import { logger } from '../utils/Logger.js'
 export default {
   setup() {
     const account = computed(() => AppState.account)
@@ -67,12 +68,13 @@ export default {
     return {
       account,
       profile: computed(() => AppState.profile),
-      posts: computed(() => AppState.posts),
+      posts: computed(() => AppState.posts.filter(p => p.creatorId === route.params.id)),
       postsData: computed(() => AppState.postsData),
       currentPage: computed(() => AppState.currentPage),
       async getOlderPage() {
         try {
           await postsFeedService.getOlderPage({ creatorId: route.params.id })
+          logger.log({ creatorId: route.params.id }, 'id we are looking for')
         } catch (error) {
           Pop.toast('error', error)
         }
