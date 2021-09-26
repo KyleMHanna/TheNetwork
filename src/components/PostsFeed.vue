@@ -62,7 +62,7 @@ export default {
       async likePost() {
         try {
           logger.log(props.post.creatorId, 'from the postfeed likes')
-          await postsFeedService.likePost(props.post.id, props.post.creatorId)
+          await postsFeedService.likePost(props.post.id)
           Pop.toast('success')
         } catch (error) {
           Pop.toast(error, 'error')

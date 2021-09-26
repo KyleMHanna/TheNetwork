@@ -36,7 +36,7 @@
     <PostsFeed v-for="p in posts" :key="p.id" :post="p" />
   </div>
   <div class="row" v-else>
-    <h3>No Content</h3>
+    <h3>No more Content</h3>
   </div>
 </template>
 
@@ -95,7 +95,7 @@ export default {
 <style lang="scss" scoped>
 
 .cover-img{
-  height: 40vh;
+  height: 50vh;
   background-position: center;
   background-size: cover;
 }

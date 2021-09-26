@@ -61,7 +61,7 @@ export default {
         try {
           await postsFeedService.getOlderPage()
         } catch (error) {
-          Pop.toast('error', error)
+          Pop.toast('No more posts', 'error', error)
         }
       },
       async getNewerPage() {
