@@ -11,8 +11,8 @@
     </div>
   </main>
   <footer>
-    <div class="bg-primary text-light text-center p-4">
-      🔥🔥🔥Sponsors are going here🔥🔥🔥
+    <div>
+      <Ads class="container-fluid" />
     </div>
   </footer>
 

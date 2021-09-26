@@ -1,6 +1,11 @@
 <template>
-  <div class="">
-    <img :src="ads[0].tall" class="img-fluid " alt="">
+  <div class="row">
+    <div class="col-md-6 " v-if="ads[0] !=null">
+      <img :src="ads[0].banner" class="img-fluid" alt="">
+    </div>
+    <div class="col-md-6 " v-if="ads[0] !=null">
+      <img :src="ads[1].banner" class="img-fluid" alt="">
+    </div>
   </div>
 </template>
 
