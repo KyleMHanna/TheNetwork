@@ -2,7 +2,7 @@
 <template>
   <div class="container-fluid">
     <div class="row py-2">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div>
           <button :disabled="currentPage === 1" @click="getNewerPage()" class="btn btn-secondary elevation-5">
             Newer
@@ -12,7 +12,10 @@
           </button>
         </div>
       </div>
-      <div class="col-md-6 text-end ">
+      <div class="col-md-4">
+        <Clock />
+      </div>
+      <div class="col-md-4 text-end ">
         <button class="btn btn-secondary elevation-5 " type="button" data-bs-toggle="modal" data-bs-target="#post-form">
           Create Post
         </button>
