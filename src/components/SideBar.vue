@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar d-md-flex flex-column justify-content-between bg-primary d-none d-md-block sidebar-sticky">
+  <div class="sidebar d-md-flex flex-column justify-content-between bg-secondary d-none d-md-block sidebar-sticky">
     <div class="top-part">
       <div class="links">
         <ul class="nav-links ps-0 ">
