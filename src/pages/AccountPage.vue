@@ -13,15 +13,18 @@
     <p class="mdi mdi-linkedin mdi-48px">
       : {{ account.linkedin }}
     </p>
-    <p class="mdi mdi-file-account mdi-48px">
-      Resume: {{ account.resume }}
-    </p>
-    <p class="mdi mdi-school-outline mdi-24px">
-      {{ account.graduated }}
-    </p>
-    <p class="mdi mdi-microsoft-xbox mdi-24px">
+    <div v-if="account.resume">
+      <p class="mdi mdi-file-account mdi-48px">
+        Resume: {{ account.resume }}
+      </p>
+    </div>
+    <div v-if="account.graduated == true">
+      <p class="mdi mdi-school-outline mdi-24px">
+      </p>
+    </div>
+    <!-- <p class="mdi mdi-microsoft-xbox mdi-24px">
       {{ account.class }}
-    </p>
+    </p> -->
   </div>
   <button class="selectable mdi mdi-cog mdi-48px " @click.prevent="updateProfile()">
   </button>

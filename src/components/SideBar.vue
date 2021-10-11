@@ -17,6 +17,10 @@
           </li>
 
           <!-- <li class="nav-link py-3 href=#" type="button" data-bs-toggle="modal" data-bs-target="#post-form">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
             Create Post
           </li> -->
 
