@@ -9,9 +9,10 @@
         <p class="mdi mdi-bio mdi-48px text-dark">
           : {{ profile.bio }}
         </p>
-        <p class="mdi mdi-school-outline mdi-24px text-dark">
-          {{ profile.graduated }}
-        </p>
+        <div v-if="account.graduated == true">
+          <p class="mdi mdi-school-outline mdi-24px">
+          </p>
+        </div>
       </div>
     </div>
     <div v-else>
